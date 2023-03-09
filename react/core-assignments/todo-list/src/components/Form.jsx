@@ -22,31 +22,39 @@ const Form = () => {
         setTasks({ ...tasks, [e.target.name]: e.target.value })
     }
 
-    return (
-        <div>
-            <form action="" className="form col-mod-4 mx-auto mt-3" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <input type="text" name="newTask" className="form-control-sm" value={tasks.newTask} onChange={changeHandler} />
-                </div>
-                <button className="btn-primary mt-3">Add</button>
-            </form>
+    const deleteHandler = (delIndex) => {
+        const filterTasks = tasksList.filter((tasks, i) => {
+            return i !== delIndex
+        });
+    setTasksList(filterTasks);
+    }
 
-            <div>
-                {
-                    tasksList.map((tasks, i) => (
-                        <p key={i}>
-                            <div className="checkbox">
-                                <label htmlFor="">
-                                    <input key={i} type="checkbox" className="strike" value={1} />{tasks.newTask}
-                                </label>
-                            </div>
-                        </p>
-                    )
-                    )
-                }
+
+return (
+    <div>
+        <form action="" className="form col-mod-4 mx-auto mt-3" onSubmit={handleSubmit}>
+            <div className="form-group">
+                <input type="text" name="newTask" className="form-control-sm" value={tasks.newTask} onChange={changeHandler} />
             </div>
+            <button className="btn-primary mt-3">Add</button>
+        </form>
+
+        <div>
+            {
+                tasksList.map((tasks, i) => {
+                    return (
+                        <div key={i}>
+                            <div className="checkbox">
+                                <input className="me-3" type="checkbox"></input><span>{tasks.newTask}</span>
+                                <button className="btn-primary ms-3 mt-3" onClick={(e) => { deleteHandler(i) }} >Delete</button>
+                            </div>
+                        </div>
+                    );
+                })
+            }
         </div>
-    )
+    </div>
+)
 }
 
 export default Form
