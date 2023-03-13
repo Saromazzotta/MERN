@@ -7,23 +7,16 @@ const WordColor = (props) => {
     const { tColor } = useParams();
     const { bColor } = useParams();
 
+    const { numberCheck } = props;
+
 
     return (
         <div>
-            
-            
-            if isNaN(word)
-                return (
-                    <h1 style={
-                        
-                        { color: { tColor }, backgroundColor: { bColor } }
-                        
-                    }>
-                    The word is: {word}
-                    </h1>
-                )
-            
-            
+            <h1 style={{ color: { tColor }, backgroundColor: { bColor } }}>
+                The word is: {word}
+            </h1>
+
+
 
         </div>
     )
