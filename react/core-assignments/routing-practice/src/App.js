@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Home from './components/Home'
+import Input from './components/Input'
 import WordColor from './components/WordColor';
 
 function App() {
@@ -23,10 +24,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/:user_input" element={<Home numberCheck={numberCheck} />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/:user_input" element={<Input numberCheck={numberCheck} />} />
         {/* <Route path="/:number" element={<Number numberCheck={numberCheck} />} /> */}
         {/* <Route path="/:word" element={<Word numberCheck={numberCheck} />} /> */}
-        <Route path="/:word/:tColor/:bColor" element={<WordColor numberCheck={numberCheck} />} />
+        <Route path="/:user_input/:tColor/:bColor" element={<WordColor numberCheck={numberCheck} />} />
       </Routes>
     </div>
   );
