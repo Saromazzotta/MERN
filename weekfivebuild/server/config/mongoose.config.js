@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 //make sure to change db name 
-mongoose.connect('mongodb://127.0.0.1:27017/test', {
+mongoose.connect('mongodb://127.0.0.1:27017/movieDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
