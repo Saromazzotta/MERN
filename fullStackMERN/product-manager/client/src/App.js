@@ -1,11 +1,13 @@
+import { Routes, Route } from 'react-router';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import ProductForm from './components/ProductForm';
+
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route element={} path="api/players/create" />
+        <Route element={<ProductForm />} path="/api/products/create" />
       </Routes>
     </div>
   );
